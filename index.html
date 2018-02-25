@@ -1,0 +1,190 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+<link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
+<link rel = "stylesheet" href = "image.css""> <!-- future decoration --> 
+<script src="lib/onsen/js/angular/angular.js"></script>
+<script src="lib/onsen/js/onsenui.js"></script>
+ </head>
+<body>
+<ons-splitter>
+  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+    <ons-page>
+      <ons-list>
+        <ons-list-item onclick="fn.load('bob.html')" tappable>
+          Bob
+        </ons-list-item>
+		
+		<ons-list-item onclick="fn.load('queue.html')" tappable>
+          Queue Lists
+        </ons-list-item>
+
+		<ons-list-item onclick="fn.load('viewmenu.html')" tappable>
+          Menu View
+        </ons-list-item>
+
+		<ons-list-item onclick="fn.load('customerPartySize.html')" tappable>
+          Customer Party Size (just shitty button)
+        </ons-list-item>
+        
+        
+		
+      </ons-list>
+    </ons-page>
+  </ons-splitter-side>
+  <ons-splitter-content id="content" page="bob.html"></ons-splitter-content>
+</ons-splitter>
+
+<template id="queue.html">
+  <ons-page id="home">
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Queue List
+      </div>
+    </ons-toolbar>
+     <ons-list id = "queuelist">
+
+	 </ons-list> 
+
+	<ons-fab position="bottom right" onclick="fn.load('addQueue.html')">
+		<ons-icon icon="md-plus"></ons-icon>
+  </ons-fab>
+  </ons-page>
+</template>
+
+<template id="viewmenu.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Menu Lists
+      </div>
+    </ons-toolbar>
+     <ons-list id>
+    <ons-list-item onclick="fn.load('itema.html')">Item A</ons-list-item>
+    <ons-list-item onclick="fn.load('itemb.html')">Item B</ons-list-item>
+	 </ons-list> 
+
+  </ons-page>
+</template>
+
+<template id="bob.html">
+  <ons-page >
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Insert Bob Here
+      </div>
+    </ons-toolbar>
+  </ons-page>
+</template>
+
+<template id="customerPartySize.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Customer Party Size
+      </div>
+	  
+    </ons-toolbar>
+	<div style="text-align: center; margin-top: 30px;">
+	<p>
+      <ons-input id="name"></ons-input>
+    </p>
+    <p style="margin-top: 30px;">
+      <ons-button onclick="addName()">Add Party Size</ons-button>
+    </p>
+	</div>
+  </ons-page>
+</template>
+
+<template id="addQueue.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Add Queue
+      </div>
+	  
+    </ons-toolbar>
+	<div style="text-align: center; margin-top: 30px;">
+	<p>
+      <ons-input id="item"></ons-input>
+    </p>
+    <p style="margin-top: 30px;">
+      <ons-button onclick="addItem()">Add Queue</ons-button>
+    </p>
+	</div>
+  </ons-page>
+</template>
+
+<template id="itema.html">
+  <ons-page >
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Item A Info
+      </div>
+    </ons-toolbar>
+	<center>
+		<img src="egg.png" alt="Mountain View" >
+		<p>Tasty shit</p>
+		<img src = "back.png" onclick = "fn.load('viewmenu.html')" >
+	</center>
+	
+	
+  </ons-page>
+</template>
+
+<template id="itemb.html">
+  <ons-page >
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Item B Info
+      </div>
+    </ons-toolbar>
+	<center>
+		<img src="kimchi.jpg" alt="Mountain View" style="width:25%;height:25%;" >
+		<p>Nasty shit</p>
+		<img src = "back.png" onclick = "fn.load('viewmenu.html')" >
+	</center>
+  </ons-page>
+</template>
+
+
+<script src = "javascript.js"></script>
+</body>
+</html>
